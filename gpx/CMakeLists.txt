@@ -48,11 +48,13 @@ set(SRC
 if(WIN32)
   add_library(gpx
               STATIC
-              ${SRC})
+              ${SRC}
+	      ${EXPAT_LIBRARIES})
 else()
   add_library(gpx
-              SHARED
-              ${SRC})
+              STATIC
+              ${SRC}
+	      ${EXPAT_LIBRARIES})
 endif()
 
 set_target_properties(gpx PROPERTIES VERSION   1)
